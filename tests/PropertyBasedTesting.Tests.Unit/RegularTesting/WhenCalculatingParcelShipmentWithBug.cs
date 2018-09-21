@@ -1,3 +1,4 @@
+using NFluent;
 using PropertyBasedTesting.Domain;
 using Xunit;
 
@@ -13,7 +14,7 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
             var postalService = new PostalServiceWithBug();
             var isFreeShipment = postalService.IsFreeShipment(price);
             
-            Assert.Equal(false, isFreeShipment);
+            Check.That(isFreeShipment).IsFalse();
         }
         
         [Fact]
@@ -24,7 +25,7 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
             var postalService = new PostalServiceWithBug();
             var isFreeShipment = postalService.IsFreeShipment(price);
             
-            Assert.Equal(true, isFreeShipment);
+            Check.That(isFreeShipment).IsTrue();
         }
     }
 }

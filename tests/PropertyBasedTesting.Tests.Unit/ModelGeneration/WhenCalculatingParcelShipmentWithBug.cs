@@ -1,8 +1,10 @@
 using System.Linq;
 using FsCheck;
 using FsCheck.Xunit;
+using NFluent;
 using PropertyBasedTesting.Domain;
 using Xunit;
+using Check = NFluent.Check;
 
 namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
 {
@@ -14,7 +16,7 @@ namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
             var postalService = new PostalServiceWithBug();
             var isFreeShipment = postalService.IsFreeShipment(parcel);
             
-            Assert.Equal(false, isFreeShipment);
+            Check.That(isFreeShipment).IsFalse();
         }
 
         [Property(Arbitrary = new[] {typeof(ParcelPriceEqualOrAbove20Euros)})]
@@ -23,7 +25,7 @@ namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
             var postalService = new PostalServiceWithBug();
             var isFreeShipment = postalService.IsFreeShipment(parcel);
             
-            Assert.Equal(true, isFreeShipment);
+            Check.That(isFreeShipment).IsTrue();
         }
 
         public class ParcelPriceBelow20Euros
