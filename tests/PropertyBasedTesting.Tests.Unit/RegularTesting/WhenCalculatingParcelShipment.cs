@@ -47,7 +47,7 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
                 Check.That(isFreeShipment).IsFalse();
             }
         }
-        
+
         public class ClassData
         {
             [Theory]
