@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using FsCheck;
 using FsCheck.Xunit;
@@ -80,7 +81,7 @@ namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
                         sum += (double) price;
                     }
 
-                    return sum >= 20;
+                    return sum >= 20 && sum <= (double)decimal.MaxValue;
                 }
             }
 
