@@ -6,7 +6,7 @@ namespace PropertyBasedTesting.Domain
     public class Parcel
     {
         private readonly IEnumerable<Item> _items;
-        public double TotalPrice => _items.Sum(x => x.Price);
+        public Price TotalPrice => (Price)_items.Sum(x => x.Price);
 
         public Parcel(IEnumerable<Item> items)
         {
