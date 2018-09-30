@@ -8,5 +8,10 @@ namespace PropertyBasedTesting.Domain
         {
             return parcel.TotalPrice >= FreeShipmentThreshold;
         }
+
+        public bool IsParcelEntitledToFreeShipment(decimal parcelTotalPrice)
+        {
+            return parcelTotalPrice >= FreeShipmentThreshold;
+        }
     }
 }
