@@ -60,7 +60,8 @@ namespace PropertyBasedTesting.Domain
 
         public override string ToString()
         {
-            return _price.ToString(CultureInfo.InvariantCulture);
+            var copyOfPrice = _price;
+            return copyOfPrice.ToString(CultureInfo.InvariantCulture);
         }
     }
 }
