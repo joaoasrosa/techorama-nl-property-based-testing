@@ -4,7 +4,7 @@
     {
         public Price Price { get; }
 
-        public Item(double price)
+        public Item(decimal price)
         {
             Price = (Price)price;
         }
