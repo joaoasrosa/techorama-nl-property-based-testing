@@ -12,7 +12,7 @@ namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
         [Property(MaxTest = 50, Arbitrary = new[] {typeof(ParcelPriceBelow20Euros)})]
         public void GivenParcelPriceIsBelow20Euros_ParcelShipmentIsNotFree(Parcel parcel)
         {
-            var postalService = new PostalService();
+            var postalService = new PostalService(new FreeShipment());
             var isFreeShipment = postalService.IsFreeShipment(parcel);
 
             Check.That(isFreeShipment).IsFalse();
@@ -21,7 +21,7 @@ namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
         [Property(Arbitrary = new[] {typeof(ParcelPriceEqualOrAbove20Euros)})]
         public void GivenParcelPriceIsEqualOrAbove20Euros_ParcelShipmentFree(Parcel parcel)
         {
-            var postalService = new PostalService();
+            var postalService = new PostalService(new FreeShipment());
             var isFreeShipment = postalService.IsFreeShipment(parcel);
             
             Check.That(isFreeShipment).IsTrue();
