@@ -16,9 +16,9 @@ namespace PropertyBasedTesting.Domain
             return _freeShipment.IsParcelEntitledToFreeShipment(parcel);
         }
 
-        public bool IsFreeShipment(decimal parcelPrice)
+        public bool IsFreeShipment(decimal parcelTotalPrice)
         {
-            return parcelPrice >= 20;
+            return _freeShipment.IsParcelEntitledToFreeShipment(parcelTotalPrice);
         }
     }
 }
