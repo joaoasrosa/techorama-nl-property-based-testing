@@ -25,6 +25,16 @@ namespace PropertyBasedTesting.Domain
             return new Price(price);
         }
 
+        public static bool operator ==(Price left, Price right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Price left, Price right)
+        {
+            return !left.Equals(right);
+        }
+
         public bool Equals(Price other)
         {
             return _price == other._price;
@@ -41,16 +51,6 @@ namespace PropertyBasedTesting.Domain
         public override int GetHashCode()
         {
             return _price.GetHashCode();
-        }
-
-        public static bool operator ==(Price left, Price right)
-        {
-            return left.Equals(right);
-        }
-
-        public static bool operator !=(Price left, Price right)
-        {
-            return !left.Equals(right);
         }
 
         public override string ToString()
