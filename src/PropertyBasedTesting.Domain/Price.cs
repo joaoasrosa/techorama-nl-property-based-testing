@@ -25,11 +25,6 @@ namespace PropertyBasedTesting.Domain
             return new Price(price);
         }
 
-        public static explicit operator Price(double price)
-        {
-            return new Price((decimal) price);
-        }
-
         public bool Equals(Price other)
         {
             return _price == other._price;
