@@ -64,9 +64,22 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
             {
                 public IEnumerator<object[]> GetEnumerator()
                 {
-                    yield return new object[] {new Parcel(new[] {new Item(3)})};
-                    yield return new object[] {new Parcel(new[] {new Item(3), new Item(3)})};
-                    yield return new object[] {new Parcel(new[] {new Item(3), new Item(3), new Item(1)})};
+                    yield return CreateParcel(3);
+                    yield return CreateParcel(3, 3);
+                    yield return CreateParcel(3, 3, 1);
+                    yield return CreateParcel(5, 4);
+                }
+
+                private static object[] CreateParcel(params decimal[] prices)
+                {
+                    var parcel = new Parcel();
+                    
+                    foreach (var price in prices)
+                    {
+                        parcel.AddItem(new Item(price));
+                    }
+
+                    return new object[] {parcel};
                 }
 
                 IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
