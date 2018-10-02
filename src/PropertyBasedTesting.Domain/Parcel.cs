@@ -18,5 +18,10 @@ namespace PropertyBasedTesting.Domain
         {
             _items.Add(item);
         }
+
+        public override string ToString()
+        {
+            return $"Parcel total price: {TotalPrice}";
+        }
     }
 }
