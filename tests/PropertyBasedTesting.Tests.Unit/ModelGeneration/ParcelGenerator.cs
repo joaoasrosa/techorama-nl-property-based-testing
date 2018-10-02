@@ -3,7 +3,7 @@ using PropertyBasedTesting.Domain;
 
 namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
 {
-    public class ModelGenerator
+    public class ParcelGenerator
     {
         public class ParcelTotalPriceBelow20Euro
         {
