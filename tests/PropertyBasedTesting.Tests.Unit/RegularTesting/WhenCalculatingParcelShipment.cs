@@ -15,7 +15,7 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
             {
                 const decimal price = 5;
 
-                var postalService = new PostalService(new FreeShipment());
+                var postalService = new PostalService();
                 var isFreeShipment = postalService.IsFreeShipment(price);
 
                 Check.That(isFreeShipment).IsFalse();
@@ -26,7 +26,7 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
             {
                 const decimal price = 20;
 
-                var postalService = new PostalService(new FreeShipment());
+                var postalService = new PostalService();
                 var isFreeShipment = postalService.IsFreeShipment(price);
 
                 Check.That(isFreeShipment).IsTrue();
@@ -41,7 +41,7 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
             [InlineData(9)]
             public void GivenParcelPriceIsBelow20Euros_ParcelShipmentIsNotFree(decimal price)
             {
-                var postalService = new PostalService(new FreeShipment());
+                var postalService = new PostalService();
                 var isFreeShipment = postalService.IsFreeShipment(price);
 
                 Check.That(isFreeShipment).IsFalse();
@@ -54,7 +54,7 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
             [ClassData(typeof(ParcelData))]
             public void GivenParcelPriceIsBelow20Euros_ParcelShipmentIsNotFree(Parcel parcel)
             {
-                var postalService = new PostalService(new FreeShipment());
+                var postalService = new PostalService();
                 var isFreeShipment = postalService.IsFreeShipment(parcel);
 
                 Check.That(isFreeShipment).IsFalse();
