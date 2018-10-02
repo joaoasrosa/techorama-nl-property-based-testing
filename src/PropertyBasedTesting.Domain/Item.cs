@@ -6,7 +6,7 @@
 
         public Item(decimal price)
         {
-            Price = (Price)price;
+            Price = (Price) price;
         }
     }
 }
