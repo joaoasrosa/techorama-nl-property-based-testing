@@ -39,6 +39,9 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
             [InlineData(3)]
             [InlineData(8)]
             [InlineData(9)]
+            [InlineData(11.5)]
+            [InlineData(15)]
+            [InlineData(19.9)]
             public void GivenParcelPriceIsBelow20Euros_ParcelShipmentIsNotFree(decimal price)
             {
                 var postalService = new PostalService();
