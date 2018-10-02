@@ -20,7 +20,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ModelGeneration" />
       <Folder Include="PrimitiveGeneration" />
     </ItemGroup>
 
