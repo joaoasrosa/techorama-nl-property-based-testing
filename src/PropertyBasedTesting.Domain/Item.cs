@@ -2,11 +2,11 @@
 {
     public struct Item
     {
-        public decimal Price { get; }
+        public Price Price { get; }
 
         public Item(decimal price)
         {
-            Price = price;
+            Price = (Price) price;
         }
     }
 }

@@ -19,8 +19,4 @@
       <ProjectReference Include="..\..\src\PropertyBasedTesting.Domain\PropertyBasedTesting.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="PrimitiveGeneration" />
-    </ItemGroup>
-
 </Project>

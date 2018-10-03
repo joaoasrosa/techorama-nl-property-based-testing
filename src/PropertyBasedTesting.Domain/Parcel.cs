@@ -7,7 +7,7 @@ namespace PropertyBasedTesting.Domain
     {
         private readonly IList<Item> _items;
         
-        public decimal TotalPrice => _items.Sum(x => x.Price);
+        public Price TotalPrice => (Price) _items.Sum(x => x.Price);
 
         public Parcel()
         {
