@@ -37,7 +37,8 @@ namespace PropertyBasedTesting.Tests.Unit.RegularTesting
         {
             [Theory]
             [InlineData(3)]
-            [InlineData(8)]
+            [InlineData(19.5)]
+            [InlineData(0.5)]
             [InlineData(9)]
             [InlineData(11.5)]
             [InlineData(15)]
