@@ -10,7 +10,7 @@ namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
             public static Arbitrary<Parcel> Parcel()
             {
                 var input = from prices in Arb.Generate<decimal[]>()
-                    where PricesAreValid(prices, 0, 20)
+                    where PricesAreValid(prices, minPrice: 0, maxPrice: 20)
                     select CreateParcel(prices);
 
                 return input.ToArbitrary();
@@ -22,7 +22,7 @@ namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
             public static Arbitrary<Parcel> Parcel()
             {
                 var input = from prices in Arb.Generate<decimal[]>()
-                    where PricesAreValid(prices, 20, int.MaxValue)
+                    where PricesAreValid(prices, minPrice: 20, maxPrice: int.MaxValue)
                     select CreateParcel(prices);
 
                 return input.ToArbitrary();
