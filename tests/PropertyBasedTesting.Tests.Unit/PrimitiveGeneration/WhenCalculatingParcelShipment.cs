@@ -23,8 +23,7 @@ namespace PropertyBasedTesting.Tests.Unit.PrimitiveGeneration
 
         [Property(
             Arbitrary = new[] {typeof(ParcelTotalPriceBelow20Euro)},
-            Verbose = true,
-            MaxTest = 5)]
+            Verbose = true)]
         public void GivenParcelTotalPriceIsBelow20Euro_ThenIsNotEntitledToFreeShipment(
             decimal parcelTotalPrice)
         {

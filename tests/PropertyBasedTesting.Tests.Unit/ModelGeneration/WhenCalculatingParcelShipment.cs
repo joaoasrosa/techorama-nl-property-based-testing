@@ -20,8 +20,7 @@ namespace PropertyBasedTesting.Tests.Unit.ModelGeneration
         
         [Property(
             Arbitrary = new[] {typeof(ParcelGenerator.ParcelTotalPriceBelow20Euro)},
-            Verbose = true,
-            Replay = "1820211557,296505923")]
+            Verbose = true)]
         public void GivenParcelTotalPriceIsBelow20Euro_ThenIsNotEntitledToFreeShipment(
             Parcel parcel)
         {

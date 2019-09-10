@@ -4,7 +4,7 @@ namespace PropertyBasedTesting.Domain
     {
         public bool IsFreeShipment(Parcel parcel)
         {
-            return parcel.TotalPrice >= 5M;
+            return parcel.TotalPrice >= 20M;
         }
 
         public bool IsFreeShipment(decimal parcelTotalPrice)
